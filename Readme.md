@@ -7,7 +7,7 @@ Based on libvlc.
 ##Building
 To build the project you'll need VLCKit.framework.
 
-Clone and bukd it form here git://git.videolan.org/vlc-bindings/VLCKit.git
+Clone and build it form here git://git.videolan.org/vlc-bindings/VLCKit.git
 
 ##Usage
 
