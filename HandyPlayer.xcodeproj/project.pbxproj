@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58F183561A0A708D00A7E9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F183551A0A708D00A7E9D2 /* AppDelegate.m */; };
+		58F183581A0A708D00A7E9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F183571A0A708D00A7E9D2 /* main.m */; };
+		58F1835B1A0A708D00A7E9D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1835A1A0A708D00A7E9D2 /* ViewController.m */; };
+		58F1835D1A0A708D00A7E9D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F1835C1A0A708D00A7E9D2 /* Images.xcassets */; };
+		58F183601A0A708D00A7E9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F1835E1A0A708D00A7E9D2 /* Main.storyboard */; };
+		58F1836C1A0A708E00A7E9D2 /* HandyPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1836B1A0A708E00A7E9D2 /* HandyPlayerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58F183661A0A708E00A7E9D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58F183471A0A708D00A7E9D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58F1834E1A0A708D00A7E9D2;
+			remoteInfo = HandyPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F183531A0A708D00A7E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F183541A0A708D00A7E9D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58F183551A0A708D00A7E9D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58F183571A0A708D00A7E9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58F183591A0A708D00A7E9D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		58F1835A1A0A708D00A7E9D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58F1835C1A0A708D00A7E9D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		58F1835F1A0A708D00A7E9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58F183651A0A708E00A7E9D2 /* HandyPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandyPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F1836A1A0A708E00A7E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F1836B1A0A708E00A7E9D2 /* HandyPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HandyPlayerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58F1834C1A0A708D00A7E9D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F183621A0A708E00A7E9D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58F183461A0A708D00A7E9D2 = {
+			isa = PBXGroup;
+			children = (
+				58F183511A0A708D00A7E9D2 /* HandyPlayer */,
+				58F183681A0A708E00A7E9D2 /* HandyPlayerTests */,
+				58F183501A0A708D00A7E9D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58F183501A0A708D00A7E9D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */,
+				58F183651A0A708E00A7E9D2 /* HandyPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58F183511A0A708D00A7E9D2 /* HandyPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				58F183541A0A708D00A7E9D2 /* AppDelegate.h */,
+				58F183551A0A708D00A7E9D2 /* AppDelegate.m */,
+				58F183591A0A708D00A7E9D2 /* ViewController.h */,
+				58F1835A1A0A708D00A7E9D2 /* ViewController.m */,
+				58F1835C1A0A708D00A7E9D2 /* Images.xcassets */,
+				58F1835E1A0A708D00A7E9D2 /* Main.storyboard */,
+				58F183521A0A708D00A7E9D2 /* Supporting Files */,
+			);
+			path = HandyPlayer;
+			sourceTree = "<group>";
+		};
+		58F183521A0A708D00A7E9D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F183531A0A708D00A7E9D2 /* Info.plist */,
+				58F183571A0A708D00A7E9D2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58F183681A0A708E00A7E9D2 /* HandyPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				58F1836B1A0A708E00A7E9D2 /* HandyPlayerTests.m */,
+				58F183691A0A708E00A7E9D2 /* Supporting Files */,
+			);
+			path = HandyPlayerTests;
+			sourceTree = "<group>";
+		};
+		58F183691A0A708E00A7E9D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F1836A1A0A708E00A7E9D2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58F1834E1A0A708D00A7E9D2 /* HandyPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F1836F1A0A708E00A7E9D2 /* Build configuration list for PBXNativeTarget "HandyPlayer" */;
+			buildPhases = (
+				58F1834B1A0A708D00A7E9D2 /* Sources */,
+				58F1834C1A0A708D00A7E9D2 /* Frameworks */,
+				58F1834D1A0A708D00A7E9D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HandyPlayer;
+			productName = HandyPlayer;
+			productReference = 58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58F183641A0A708E00A7E9D2 /* HandyPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F183721A0A708E00A7E9D2 /* Build configuration list for PBXNativeTarget "HandyPlayerTests" */;
+			buildPhases = (
+				58F183611A0A708E00A7E9D2 /* Sources */,
+				58F183621A0A708E00A7E9D2 /* Frameworks */,
+				58F183631A0A708E00A7E9D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58F183671A0A708E00A7E9D2 /* PBXTargetDependency */,
+			);
+			name = HandyPlayerTests;
+			productName = HandyPlayerTests;
+			productReference = 58F183651A0A708E00A7E9D2 /* HandyPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58F183471A0A708D00A7E9D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sergey Yuzepovich";
+				TargetAttributes = {
+					58F1834E1A0A708D00A7E9D2 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					58F183641A0A708E00A7E9D2 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 58F1834E1A0A708D00A7E9D2;
+					};
+				};
+			};
+			buildConfigurationList = 58F1834A1A0A708D00A7E9D2 /* Build configuration list for PBXProject "HandyPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58F183461A0A708D00A7E9D2;
+			productRefGroup = 58F183501A0A708D00A7E9D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58F1834E1A0A708D00A7E9D2 /* HandyPlayer */,
+				58F183641A0A708E00A7E9D2 /* HandyPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58F1834D1A0A708D00A7E9D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F1835D1A0A708D00A7E9D2 /* Images.xcassets in Resources */,
+				58F183601A0A708D00A7E9D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F183631A0A708E00A7E9D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58F1834B1A0A708D00A7E9D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F1835B1A0A708D00A7E9D2 /* ViewController.m in Sources */,
+				58F183581A0A708D00A7E9D2 /* main.m in Sources */,
+				58F183561A0A708D00A7E9D2 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F183611A0A708E00A7E9D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F1836C1A0A708E00A7E9D2 /* HandyPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58F183671A0A708E00A7E9D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58F1834E1A0A708D00A7E9D2 /* HandyPlayer */;
+			targetProxy = 58F183661A0A708E00A7E9D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58F1835E1A0A708D00A7E9D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58F1835F1A0A708D00A7E9D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58F1836D1A0A708E00A7E9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		58F1836E1A0A708E00A7E9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		58F183701A0A708E00A7E9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HandyPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58F183711A0A708E00A7E9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HandyPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		58F183731A0A708E00A7E9D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HandyPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandyPlayer.app/Contents/MacOS/HandyPlayer";
+			};
+			name = Debug;
+		};
+		58F183741A0A708E00A7E9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HandyPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandyPlayer.app/Contents/MacOS/HandyPlayer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58F1834A1A0A708D00A7E9D2 /* Build configuration list for PBXProject "HandyPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F1836D1A0A708E00A7E9D2 /* Debug */,
+				58F1836E1A0A708E00A7E9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58F1836F1A0A708E00A7E9D2 /* Build configuration list for PBXNativeTarget "HandyPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F183701A0A708E00A7E9D2 /* Debug */,
+				58F183711A0A708E00A7E9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		58F183721A0A708E00A7E9D2 /* Build configuration list for PBXNativeTarget "HandyPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F183731A0A708E00A7E9D2 /* Debug */,
+				58F183741A0A708E00A7E9D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58F183471A0A708D00A7E9D2 /* Project object */;
+}
