@@ -13,6 +13,9 @@
 		58F1835D1A0A708D00A7E9D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F1835C1A0A708D00A7E9D2 /* Images.xcassets */; };
 		58F183601A0A708D00A7E9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F1835E1A0A708D00A7E9D2 /* Main.storyboard */; };
 		58F1836C1A0A708E00A7E9D2 /* HandyPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1836B1A0A708E00A7E9D2 /* HandyPlayerTests.m */; };
+		58F183781A0A88A400A7E9D2 /* VLCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F183771A0A88A400A7E9D2 /* VLCKit.framework */; };
+		58F1837A1A0A88D700A7E9D2 /* VLCKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58F183771A0A88A400A7E9D2 /* VLCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58F183801A0A8C6C00A7E9D2 /* DragDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,19 @@
 			remoteInfo = HandyPlayer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58F183791A0A88CE00A7E9D2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58F1837A1A0A88D700A7E9D2 /* VLCKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,10 @@
 		58F183651A0A708E00A7E9D2 /* HandyPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandyPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F1836A1A0A708E00A7E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F1836B1A0A708E00A7E9D2 /* HandyPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HandyPlayerTests.m; sourceTree = "<group>"; };
+		58F183771A0A88A400A7E9D2 /* VLCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VLCKit.framework; path = Frameworks/VLCKit.framework; sourceTree = SOURCE_ROOT; };
+		58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropView.h; sourceTree = "<group>"; };
+		58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropView.m; sourceTree = "<group>"; };
+		58F183811A0A94E800A7E9D2 /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F183781A0A88A400A7E9D2 /* VLCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +106,11 @@
 				58F1835A1A0A708D00A7E9D2 /* ViewController.m */,
 				58F1835C1A0A708D00A7E9D2 /* Images.xcassets */,
 				58F1835E1A0A708D00A7E9D2 /* Main.storyboard */,
+				58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */,
+				58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */,
+				58F183761A0A888600A7E9D2 /* Frameworks */,
 				58F183521A0A708D00A7E9D2 /* Supporting Files */,
+				58F183811A0A94E800A7E9D2 /* Notifications.h */,
 			);
 			path = HandyPlayer;
 			sourceTree = "<group>";
@@ -116,6 +141,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		58F183761A0A888600A7E9D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58F183771A0A88A400A7E9D2 /* VLCKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,6 +159,7 @@
 				58F1834B1A0A708D00A7E9D2 /* Sources */,
 				58F1834C1A0A708D00A7E9D2 /* Frameworks */,
 				58F1834D1A0A708D00A7E9D2 /* Resources */,
+				58F183791A0A88CE00A7E9D2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -218,6 +252,7 @@
 				58F1835B1A0A708D00A7E9D2 /* ViewController.m in Sources */,
 				58F183581A0A708D00A7E9D2 /* main.m in Sources */,
 				58F183561A0A708D00A7E9D2 /* AppDelegate.m in Sources */,
+				58F183801A0A8C6C00A7E9D2 /* DragDropView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +306,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -285,6 +321,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/Headers\"/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -314,6 +355,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -321,6 +363,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/Headers\"/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -332,6 +379,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = HandyPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -343,6 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = HandyPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DragDropView.h
 //  HandyPlayer
 //
 //  Created by Sergey Yuzepovich on 05.11.14.
@@ -7,10 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <VLCKit/VLCKit.h>
 
-@interface ViewController : NSViewController<VLCMediaPlayerDelegate>
-
+@interface DragDropView : NSView
 
 @end
-
