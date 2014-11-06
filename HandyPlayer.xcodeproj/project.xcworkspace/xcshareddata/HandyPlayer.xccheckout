@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8E6DDBD7-1B0D-461E-A616-7019462207B4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HandyPlayer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3610419FEE05F8E61BF433BA373B8391AB43275E</key>
+		<string>https://github.com/golopupinsky/HandyPlayer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HandyPlayer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3610419FEE05F8E61BF433BA373B8391AB43275E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/golopupinsky/HandyPlayer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3610419FEE05F8E61BF433BA373B8391AB43275E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3610419FEE05F8E61BF433BA373B8391AB43275E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HandyPlayer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

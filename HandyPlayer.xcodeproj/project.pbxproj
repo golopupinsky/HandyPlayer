@@ -16,6 +16,9 @@
 		58F183781A0A88A400A7E9D2 /* VLCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F183771A0A88A400A7E9D2 /* VLCKit.framework */; };
 		58F1837A1A0A88D700A7E9D2 /* VLCKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58F183771A0A88A400A7E9D2 /* VLCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58F183801A0A8C6C00A7E9D2 /* DragDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */; };
+		58F183841A0AAE8000A7E9D2 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F183831A0AAE8000A7E9D2 /* arrow-right.png */; };
+		58F183871A0B815400A7E9D2 /* MediaProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F183861A0B815400A7E9D2 /* MediaProgressView.m */; };
+		58F1838C1A0B865D00A7E9D2 /* ControllsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1838B1A0B865D00A7E9D2 /* ControllsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		58C1B1751A0BCAB100A6E3EC /* ControllsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllsDelegate.h; sourceTree = "<group>"; };
+		58C1B1761A0BDB4D00A6E3EC /* DragDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropDelegate.h; sourceTree = "<group>"; };
 		58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F183531A0A708D00A7E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F183541A0A708D00A7E9D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +63,11 @@
 		58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropView.h; sourceTree = "<group>"; };
 		58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropView.m; sourceTree = "<group>"; };
 		58F183811A0A94E800A7E9D2 /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		58F183831A0AAE8000A7E9D2 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
+		58F183851A0B815400A7E9D2 /* MediaProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaProgressView.h; sourceTree = "<group>"; };
+		58F183861A0B815400A7E9D2 /* MediaProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaProgressView.m; sourceTree = "<group>"; };
+		58F1838A1A0B865D00A7E9D2 /* ControllsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllsView.h; sourceTree = "<group>"; };
+		58F1838B1A0B865D00A7E9D2 /* ControllsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58C1B1731A0BCA4200A6E3EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				58C1B1751A0BCAB100A6E3EC /* ControllsDelegate.h */,
+				58C1B1761A0BDB4D00A6E3EC /* DragDropDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		58F183461A0A708D00A7E9D2 = {
 			isa = PBXGroup;
 			children = (
@@ -100,17 +119,18 @@
 		58F183511A0A708D00A7E9D2 /* HandyPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				58C1B1731A0BCA4200A6E3EC /* Protocols */,
+				58F183821A0AAE4300A7E9D2 /* Resources */,
+				58F183891A0B816C00A7E9D2 /* Util */,
+				58F183881A0B815800A7E9D2 /* Views */,
 				58F183541A0A708D00A7E9D2 /* AppDelegate.h */,
 				58F183551A0A708D00A7E9D2 /* AppDelegate.m */,
 				58F183591A0A708D00A7E9D2 /* ViewController.h */,
 				58F1835A1A0A708D00A7E9D2 /* ViewController.m */,
 				58F1835C1A0A708D00A7E9D2 /* Images.xcassets */,
 				58F1835E1A0A708D00A7E9D2 /* Main.storyboard */,
-				58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */,
-				58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */,
 				58F183761A0A888600A7E9D2 /* Frameworks */,
 				58F183521A0A708D00A7E9D2 /* Supporting Files */,
-				58F183811A0A94E800A7E9D2 /* Notifications.h */,
 			);
 			path = HandyPlayer;
 			sourceTree = "<group>";
@@ -147,6 +167,35 @@
 				58F183771A0A88A400A7E9D2 /* VLCKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58F183821A0AAE4300A7E9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58F183831A0AAE8000A7E9D2 /* arrow-right.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		58F183881A0B815800A7E9D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */,
+				58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */,
+				58F183851A0B815400A7E9D2 /* MediaProgressView.h */,
+				58F183861A0B815400A7E9D2 /* MediaProgressView.m */,
+				58F1838A1A0B865D00A7E9D2 /* ControllsView.h */,
+				58F1838B1A0B865D00A7E9D2 /* ControllsView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		58F183891A0B816C00A7E9D2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				58F183811A0A94E800A7E9D2 /* Notifications.h */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +281,7 @@
 			files = (
 				58F1835D1A0A708D00A7E9D2 /* Images.xcassets in Resources */,
 				58F183601A0A708D00A7E9D2 /* Main.storyboard in Resources */,
+				58F183841A0AAE8000A7E9D2 /* arrow-right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +302,9 @@
 				58F1835B1A0A708D00A7E9D2 /* ViewController.m in Sources */,
 				58F183581A0A708D00A7E9D2 /* main.m in Sources */,
 				58F183561A0A708D00A7E9D2 /* AppDelegate.m in Sources */,
+				58F183871A0B815400A7E9D2 /* MediaProgressView.m in Sources */,
 				58F183801A0A8C6C00A7E9D2 /* DragDropView.m in Sources */,
+				58F1838C1A0B865D00A7E9D2 /* ControllsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +511,7 @@
 				58F183711A0A708E00A7E9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58F183721A0A708E00A7E9D2 /* Build configuration list for PBXNativeTarget "HandyPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +520,7 @@
 				58F183741A0A708E00A7E9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -652,6 +652,7 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -671,11 +672,50 @@
                     <view key="view" id="m2S-Jp-Qdl" customClass="DragDropView">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZWs-iP-ESv" customClass="ControllsView">
+                                <rect key="frame" x="159" y="6" width="163" height="66"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olA-W2-8Ze">
+                                        <rect key="frame" x="70" y="27" width="22" height="25"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="arrow-right" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6pc-tB-BRq">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="play:" target="XfG-lQ-9wD" id="Xl8-Rj-ZX5"/>
+                                        </connections>
+                                    </button>
+                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM2-vH-pgP" customClass="MediaProgressView">
+                                        <rect key="frame" x="18" y="2" width="127" height="21"/>
+                                        <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="Csc-n3-lfD"/>
+                                        <connections>
+                                            <action selector="seek:" target="XfG-lQ-9wD" id="ZvP-gm-4RG"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="PO2-nP-h18"/>
+                                    <constraint firstAttribute="width" constant="163" id="we2-YJ-cn0"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZWs-iP-ESv" secondAttribute="centerX" id="byR-Ql-S4W"/>
+                            <constraint firstAttribute="bottom" secondItem="ZWs-iP-ESv" secondAttribute="bottom" constant="6" id="z6N-n3-VaA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="controllsView" destination="ZWs-iP-ESv" id="lbM-Yw-a5C"/>
+                        <outlet property="mediaProgressView" destination="LM2-vH-pgP" id="AK7-NJ-lO3"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-right" width="128" height="128"/>
+    </resources>
 </document>

@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <VLCKit/VLCKit.h>
+#import "DragDropDelegate.h"
 
 @interface DragDropView : NSView
+
+
+@property(nonatomic,weak) id<DragDropDelegate> delegate;
 
 @end

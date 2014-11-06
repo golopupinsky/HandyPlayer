@@ -36,36 +36,23 @@
     [self registerForDraggedTypes:[NSArray arrayWithObjects: NSColorPboardType, NSFilenamesPboardType, nil]];
 }
 
-//- (void)drawRect:(NSRect)dirtyRect {
-//    [super drawRect:dirtyRect];
-//    
-//    // Drawing code here.
-//}
 
 -(NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
 {
-//    NSLog(@"draggingEntered");
     return NSDragOperationEvery;
 }
 
-//-(NSDragOperation) draggingUpdated:(id<NSDraggingInfo>)sender
-//{
-////    NSLog(@"draggingUpdated");
-//    return NSDragOperationEvery;
-//}
 
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender  {
-//    NSLog(@"prepareForDragOperation");
     return YES;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
-//    NSLog(@"performDragOperation");
     NSArray *droppedItems = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     NSString * filename = [droppedItems objectAtIndex:0];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:kFileDroppedNotification object:nil userInfo:@{@"filename":filename}];
     
+    [self.delegate fileDropped:filename];
     return YES;
 }
 
