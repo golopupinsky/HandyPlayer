@@ -9,6 +9,7 @@
 #import "ControllsView.h"
 
 @implementation ControllsView
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -34,7 +35,48 @@
     [self setWantsLayer:true];
     [self.layer setBackgroundColor:CGColorCreateGenericGray(0.5, 0.5)];
     self.layer.cornerRadius = 5;
+
+    
+    
+    NSTrackingArea* trackingArea = [[NSTrackingArea alloc]
+                                    initWithRect:[self bounds]
+                                    options: NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
+                                    owner:self userInfo:nil];
+    [self addTrackingArea:trackingArea];
+    
+//    trackingArea = [[NSTrackingArea alloc]
+//                                    initWithRect:[self.superview bounds]
+//                                    options: NSTrackingMouseMoved | NSTrackingActiveAlways
+//                                    owner:self userInfo:nil];
+//    [self addTrackingArea:trackingArea];
+
+
 }
 
+
+//-(void)mouseMoved:(NSEvent *)theEvent
+//{
+//    NSLog(@"mouseMoved");
+//}
+
+-(void)mouseEntered:(NSEvent *)theEvent
+{
+    [self fadeIn];
+}
+
+-(void)mouseExited:(NSEvent *)theEvent
+{
+    [self fadeOut];
+}
+
+-(void)fadeOut
+{
+    self.animator.alphaValue = 0;
+}
+
+-(void)fadeIn
+{
+    self.animator.alphaValue = 1;
+}
 
 @end
