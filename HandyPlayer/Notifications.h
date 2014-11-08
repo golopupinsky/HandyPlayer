@@ -9,6 +9,6 @@
 #ifndef HandyPlayer_Notifications_h
 #define HandyPlayer_Notifications_h
 
-#define kFileDroppedNotification @"FileDroppedNotification"
+#define kVolumeChangedNotification @"VolumeChanged"
 
 #endif

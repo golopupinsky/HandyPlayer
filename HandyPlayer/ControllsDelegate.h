@@ -18,6 +18,7 @@
 -(void)pause;
 -(void)fullscreen;
 -(void)incrementVolume:(float)byVal;
+-(void)setVolume:(float)toVal;
 
 @end
 

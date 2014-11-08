@@ -27,8 +27,6 @@
     
     [self initVideoView];
     [self initControlls];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fileDropped:) name:kFileDroppedNotification object:nil];
 }
 
 -(void) initVideoView
@@ -42,13 +40,11 @@
     
     player = [[VLCMediaPlayer alloc] initWithVideoView:videoView];
     player.delegate = self;
+    [self incrementVolume:0];
 }
 
 -(void)initControlls
 {
-    mediaProgressView.delegate = self;
-    ((DragDropView*) self.view).delegate = self;
-    controllsView.delegate = self;
     [self bringControllsToFront];
 }
 
@@ -89,7 +85,13 @@
 
 -(void)incrementVolume:(float)byVal
 {
-    player.audio.volume += byVal;
+    [self setVolume: (float)player.audio.volume / 100 + byVal];
+}
+
+-(void)setVolume:(float)toVal
+{
+    player.audio.volume = toVal * 100;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kVolumeChangedNotification object:nil userInfo:@{@"volume":[NSNumber numberWithFloat: (float)player.audio.volume / 100 ]}];
 }
 
 - (void)seek:(float)val {

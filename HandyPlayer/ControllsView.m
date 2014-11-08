@@ -78,7 +78,7 @@
     {
         if (evt.type == NSScrollWheel)
         {
-            [self.delegate incrementVolume: evt.deltaY];
+            [self.delegate incrementVolume: evt.deltaY / 100];
         }
         else
         {//left mouse down
@@ -89,11 +89,8 @@
             {//considered as doubleclick
                 [self.delegate fullscreen];
             }
-
-            NSLog(@"%.3f",delta);
             
             firstClick = CACurrentMediaTime();
-            
         }
         
     }

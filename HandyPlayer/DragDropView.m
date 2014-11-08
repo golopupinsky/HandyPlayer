@@ -7,7 +7,6 @@
 //
 
 #import "DragDropView.h"
-#import "Notifications.h"
 
 @implementation DragDropView
 

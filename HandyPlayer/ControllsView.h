@@ -11,6 +11,6 @@
 
 @interface ControllsView : NSView
 
-@property(nonatomic,weak) id<ControllsDelegate> delegate;
+@property(nonatomic,weak) IBOutlet id<ControllsDelegate> delegate;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface MediaProgressView : NSView
 
-@property (nonatomic,weak) id<ControllsDelegate> delegate;
+@property(nonatomic,weak) IBOutlet id<ControllsDelegate> delegate;
 
 @property float floatValue;
 

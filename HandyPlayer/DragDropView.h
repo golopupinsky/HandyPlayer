@@ -13,6 +13,6 @@
 @interface DragDropView : NSView
 
 
-@property(nonatomic,weak) id<DragDropDelegate> delegate;
+@property(nonatomic,weak) IBOutlet id<DragDropDelegate> delegate;
 
 @end
