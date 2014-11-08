@@ -15,6 +15,8 @@
 -(void)seekStarted;
 -(void)seekEnded;
 -(void)seek:(float)val;
+-(void)pause;
+-(void)fullscreen;
 
 @end
 

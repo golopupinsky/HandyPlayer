@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ControllsDelegate.h"
 
 @interface ControllsView : NSView
+
+@property(nonatomic,weak) id<ControllsDelegate> delegate;
 
 @end

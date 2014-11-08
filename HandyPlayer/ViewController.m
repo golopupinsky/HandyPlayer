@@ -48,6 +48,7 @@
 {
     mediaProgressView.delegate = self;
     ((DragDropView*) self.view).delegate = self;
+    controllsView.delegate = self;
     [self bringControllsToFront];
 }
 
@@ -74,6 +75,16 @@
         [playButton setImage: [NSImage imageNamed:@"pause"]];
     }
 
+}
+
+-(void)pause
+{
+    [self play:nil];
+}
+
+-(void)fullscreen
+{
+    [self.view.window toggleFullScreen:self];
 }
 
 - (void)seek:(float)val {

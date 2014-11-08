@@ -7,9 +7,12 @@
 //
 
 #import "ControllsView.h"
+#import <Carbon/Carbon.h>
 
 @implementation ControllsView
-
+{
+    id eventMonitor;
+}
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -49,8 +52,27 @@
 //    [self addTrackingArea:trackingArea];
 
 
+    eventMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyDownMask handler:
+    ^NSEvent *(NSEvent *evt) {
+        return [self processEvent:evt];
+    }];
 }
 
+
+-(NSEvent*)processEvent:(NSEvent*)evt
+{
+    switch ([evt keyCode]) {
+        case kVK_Return:
+            [self.delegate fullscreen];
+            return nil;
+        case kVK_Space:
+            [self.delegate pause];
+            return nil;
+
+        default:
+            return evt;
+    }
+}
 
 //-(void)mouseMoved:(NSEvent *)theEvent
 //{
@@ -76,6 +98,11 @@
 -(void)fadeIn
 {
     self.animator.alphaValue = 1;
+}
+
+-(void)dealloc
+{
+    [NSEvent removeMonitor:eventMonitor];
 }
 
 @end
