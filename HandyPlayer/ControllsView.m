@@ -52,7 +52,7 @@
 //    [self addTrackingArea:trackingArea];
 
 
-    eventMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyDownMask handler:
+    eventMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyDownMask|NSScrollWheelMask|NSLeftMouseDownMask handler:
     ^NSEvent *(NSEvent *evt) {
         return [self processEvent:evt];
     }];
@@ -61,17 +61,44 @@
 
 -(NSEvent*)processEvent:(NSEvent*)evt
 {
-    switch ([evt keyCode]) {
-        case kVK_Return:
-            [self.delegate fullscreen];
-            return nil;
-        case kVK_Space:
-            [self.delegate pause];
-            return nil;
-
-        default:
-            return evt;
+    if( evt.type == NSKeyDown)
+    {
+        switch ([evt keyCode]) {
+            case kVK_Return:
+                [self.delegate fullscreen];
+                return nil;
+            case kVK_Space:
+                [self.delegate pause];
+                return nil;
+            default:
+                return evt;
+        }
     }
+    else
+    {
+        if (evt.type == NSScrollWheel)
+        {
+            [self.delegate incrementVolume: evt.deltaY];
+        }
+        else
+        {//left mouse down
+            static CFTimeInterval firstClick = 0;
+            float delta = CACurrentMediaTime() - firstClick;
+            
+            if(delta < 0.25)
+            {//considered as doubleclick
+                [self.delegate fullscreen];
+            }
+
+            NSLog(@"%.3f",delta);
+            
+            firstClick = CACurrentMediaTime();
+            
+        }
+        
+    }
+    
+    return evt;
 }
 
 //-(void)mouseMoved:(NSEvent *)theEvent

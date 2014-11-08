@@ -87,6 +87,11 @@
     [self.view.window toggleFullScreen:self];
 }
 
+-(void)incrementVolume:(float)byVal
+{
+    player.audio.volume += byVal;
+}
+
 - (void)seek:(float)val {
     player.position = val;
 }

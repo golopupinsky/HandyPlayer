@@ -17,6 +17,7 @@
 -(void)seek:(float)val;
 -(void)pause;
 -(void)fullscreen;
+-(void)incrementVolume:(float)byVal;
 
 @end
 
