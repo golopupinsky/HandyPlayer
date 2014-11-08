@@ -9,8 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "ControllsDelegate.h"
 
-@interface MediaProgressView : NSSlider
+@interface MediaProgressView : NSView
 
 @property (nonatomic,weak) id<ControllsDelegate> delegate;
+
+@property float floatValue;
 
 @end

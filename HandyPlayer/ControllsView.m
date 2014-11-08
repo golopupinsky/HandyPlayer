@@ -35,9 +35,7 @@
     [self setWantsLayer:true];
     [self.layer setBackgroundColor:CGColorCreateGenericGray(0.5, 0.5)];
     self.layer.cornerRadius = 5;
-
-    
-    
+        
     NSTrackingArea* trackingArea = [[NSTrackingArea alloc]
                                     initWithRect:[self bounds]
                                     options: NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
@@ -66,7 +64,8 @@
 
 -(void)mouseExited:(NSEvent *)theEvent
 {
-    [self fadeOut];
+    if( !([NSEvent pressedMouseButtons] & (1<<0)) )
+        [self fadeOut];
 }
 
 -(void)fadeOut

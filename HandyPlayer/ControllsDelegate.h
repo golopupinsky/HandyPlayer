@@ -14,6 +14,7 @@
 @required
 -(void)seekStarted;
 -(void)seekEnded;
+-(void)seek:(float)val;
 
 @end
 

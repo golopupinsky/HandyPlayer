@@ -18,6 +18,7 @@
     VLCMediaPlayer *player;
     __weak IBOutlet MediaProgressView *mediaProgressView;
     __weak IBOutlet ControllsView *controllsView;
+    __weak IBOutlet NSButton *playButton;
     BOOL isSeekeng;
 
 }
@@ -47,12 +48,13 @@
 {
     mediaProgressView.delegate = self;
     ((DragDropView*) self.view).delegate = self;
+    [self bringControllsToFront];
 }
 
 
 -(void)fileDropped:(NSString*)name
 {
-    mediaProgressView.enabled = true;
+//    mediaProgressView.enabled = true;
     
     VLCMedia * media = [VLCMedia mediaWithPath:name];
     [player setMedia:media];
@@ -64,17 +66,18 @@
     if([player isPlaying])
     {
         [player pause];
+        [playButton setImage: [NSImage imageNamed:@"play"]];
     }
     else
     {
         [player play];
+        [playButton setImage: [NSImage imageNamed:@"pause"]];
     }
 
 }
 
-- (IBAction)seek:(MediaProgressView*)sender {
-    NSLog(@"set to:%f",sender.floatValue);
-    player.position = sender.floatValue / (player.time.intValue + -player.remainingTime.intValue);
+- (void)seek:(float)val {
+    player.position = val;
 }
 
 -(void)seekStarted
@@ -89,7 +92,11 @@
 
 - (void)mediaPlayerStateChanged:(NSNotification *)aNotification
 {
+    //controlls view for some reason goes to background after playback starts
+    //so we're moving it to front
     [self bringControllsToFront];
+    [self bringControllsToFront];
+
 }
 
 -(void)bringControllsToFront
@@ -122,11 +129,12 @@
 
 - (void)mediaPlayerTimeChanged:(NSNotification *)aNotification
 {
-    if(!isSeekeng)
+    float timeLeft = (float) player.time.intValue + -player.remainingTime.intValue;
+    float curTime = (float) player.time.intValue;
+    
+    if(!isSeekeng && timeLeft != 0)
     {
-        mediaProgressView.minValue = 0;
-        mediaProgressView.maxValue = player.time.intValue + -player.remainingTime.intValue;
-        mediaProgressView.doubleValue = player.time.intValue;
+        mediaProgressView.floatValue = curTime / timeLeft;
     }
 }
 

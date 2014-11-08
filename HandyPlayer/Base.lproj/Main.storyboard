@@ -677,9 +677,12 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZWs-iP-ESv" customClass="ControllsView">
                                 <rect key="frame" x="159" y="6" width="163" height="66"/>
                                 <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-Y0-fbB" customClass="MediaProgressView">
+                                        <rect key="frame" x="12" y="7" width="139" height="15"/>
+                                    </customView>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olA-W2-8Ze">
-                                        <rect key="frame" x="70" y="27" width="22" height="25"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="arrow-right" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6pc-tB-BRq">
+                                        <rect key="frame" x="70" y="28" width="22" height="25"/>
+                                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="pause" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6pc-tB-BRq">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -687,13 +690,6 @@
                                             <action selector="play:" target="XfG-lQ-9wD" id="Xl8-Rj-ZX5"/>
                                         </connections>
                                     </button>
-                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM2-vH-pgP" customClass="MediaProgressView">
-                                        <rect key="frame" x="18" y="2" width="127" height="21"/>
-                                        <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="Csc-n3-lfD"/>
-                                        <connections>
-                                            <action selector="seek:" target="XfG-lQ-9wD" id="ZvP-gm-4RG"/>
-                                        </connections>
-                                    </slider>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="PO2-nP-h18"/>
@@ -708,7 +704,8 @@
                     </view>
                     <connections>
                         <outlet property="controllsView" destination="ZWs-iP-ESv" id="lbM-Yw-a5C"/>
-                        <outlet property="mediaProgressView" destination="LM2-vH-pgP" id="AK7-NJ-lO3"/>
+                        <outlet property="mediaProgressView" destination="oCg-Y0-fbB" id="GX2-N7-tmH"/>
+                        <outlet property="playButton" destination="olA-W2-8Ze" id="lmf-z9-Mho"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -717,6 +714,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-right" width="128" height="128"/>
+        <image name="pause" width="128" height="128"/>
     </resources>
 </document>
