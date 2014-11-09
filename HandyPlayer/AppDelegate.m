@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DragDropDelegate.h"
 
 @interface AppDelegate ()
 
@@ -20,4 +21,13 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
 
+
+- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
+{
+    NSWindow *w = [NSApplication sharedApplication].windows[0];
+    
+    [(id<DragDropDelegate>) w.contentViewController fileDropped:filename];
+
+    return true;
+}
 @end

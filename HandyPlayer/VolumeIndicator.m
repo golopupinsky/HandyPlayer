@@ -68,7 +68,6 @@
     [path closePath];
     [[NSColor colorWithRed:0 green:1 blue:0 alpha:0.3] set];
     [path fill];
-
 }
 
 - (void)mouseDown:(NSEvent *)theEvent
@@ -93,4 +92,5 @@
     volume = [(NSNumber*) notification.userInfo[@"volume"] floatValue ];
     [self setNeedsDisplay:true];
 }
+
 @end
