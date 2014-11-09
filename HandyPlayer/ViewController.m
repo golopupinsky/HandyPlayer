@@ -34,7 +34,7 @@
     videoView = [[VLCVideoView alloc] initWithFrame:[self.view frame]];
     [self.view addSubview:videoView positioned:NSWindowBelow relativeTo:mediaProgressView];
     [videoView setAutoresizingMask: NSViewHeightSizable|NSViewWidthSizable];
-//    videoView.fillScreen = YES;
+    videoView.fillScreen = YES;
 
     [VLCLibrary sharedLibrary];
     
@@ -55,6 +55,8 @@
     
     VLCMedia * media = [VLCMedia mediaWithPath:name];
     [player setMedia:media];
+    
+    
     [player play];
 }
 
@@ -113,8 +115,12 @@
     //controlls view for some reason goes to background after playback starts
     //so we're moving it to front
     [self bringControllsToFront];
-    [self bringControllsToFront];
 
+    if(player.hasVideoOut)
+    {
+        CGSize s = player.videoSize;
+        [self.view.window.animator setContentSize:s];
+    }
 }
 
 -(void)bringControllsToFront

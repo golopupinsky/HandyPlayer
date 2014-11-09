@@ -21,7 +21,6 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
 
-
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
     NSWindow *w = [NSApplication sharedApplication].windows[0];
