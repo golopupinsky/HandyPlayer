@@ -148,13 +148,11 @@
 
 -(void)mouseEntered:(NSEvent *)theEvent
 {
-    NSLog(@"mouse entered");
     mouseOverControlls = true;
 }
 
 -(void)mouseExited:(NSEvent *)theEvent
 {
-    NSLog(@"mouse exited");
     mouseOverControlls = false;
 }
 
