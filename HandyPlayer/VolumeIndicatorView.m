@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Sergey Yuzepovich. All rights reserved.
 //
 
-#import "VolumeIndicator.h"
+#import "VolumeIndicatorView.h"
 #import "Notifications.h"
 
-@implementation VolumeIndicator
+@implementation VolumeIndicatorView
 {
     float volume;
 }

@@ -20,7 +20,8 @@
     __weak IBOutlet ControllsView *controllsView;
     __weak IBOutlet NSButton *playButton;
     BOOL isSeekeng;
-
+    NSPoint dragDelta;
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,6 +95,19 @@
 {
     player.audio.volume = toVal * 100;
     [[NSNotificationCenter defaultCenter] postNotificationName:kVolumeChangedNotification object:nil userInfo:@{@"volume":[NSNumber numberWithFloat: (float)player.audio.volume / 100 ]}];
+}
+
+-(void)dragStarted
+{
+    NSPoint mouse = [NSEvent mouseLocation];
+    NSPoint window = self.view.window.frame.origin;
+    dragDelta = NSMakePoint(window.x - mouse.x, window.y - mouse.y);
+}
+
+-(void)drag
+{
+    NSPoint p = [NSEvent mouseLocation];
+    [self.view.window setFrameOrigin: NSMakePoint(p.x + dragDelta.x, p.y + dragDelta.y)];
 }
 
 - (void)seek:(float)val {

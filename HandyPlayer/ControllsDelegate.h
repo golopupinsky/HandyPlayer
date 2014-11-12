@@ -19,7 +19,8 @@
 -(void)fullscreen;
 -(void)incrementVolume:(float)byVal;
 -(void)setVolume:(float)toVal;
-
+-(void)dragStarted;
+-(void)drag;
 @end
 
 #endif
