@@ -42,31 +42,39 @@
 
     [self drawBackground];
     [self drawVolume];
+    [self drawOverload];
 }
 
 -(void)drawBackground
 {
-    NSBezierPath *path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(0, 0)];
-    [path lineToPoint:NSMakePoint(self.frame.size.width, self.frame.size.height)];
-    [path lineToPoint:NSMakePoint(self.frame.size.width, 0)];
-    [path closePath];
-    [[NSColor colorWithWhite:0.5 alpha:0.5] set];
-    [path fill];
+    [self drawTriangleOfWidht:self.frame.size.width color: [NSColor colorWithWhite:0.5 alpha:0.5] ];
 }
 
 -(void)drawVolume
 {
-    float aspect = self.frame.size.height / self.frame.size.width;
     float w = self.frame.size.width * volume;
-    float h = w * aspect;
     
+    [self drawTriangleOfWidht:w color: [NSColor  colorWithRed:0 green:1 blue:0 alpha:0.3] ];
+}
+
+-(void)drawOverload
+{
+    float w = self.frame.size.width * (volume-1);
+ 
+    [self drawTriangleOfWidht:w color: [NSColor  colorWithRed:1 green:0 blue:0 alpha:0.3] ];
+}
+
+-(void)drawTriangleOfWidht:(float)w color:(NSColor*)color
+{
+    float aspect = self.frame.size.height / self.frame.size.width;
+    float h = w * aspect;
+
     NSBezierPath *path = [NSBezierPath bezierPath];
     [path moveToPoint:NSMakePoint(0, 0)];
     [path lineToPoint:NSMakePoint(w, h)];
     [path lineToPoint:NSMakePoint(w, 0)];
     [path closePath];
-    [[NSColor colorWithRed:0 green:1 blue:0 alpha:0.3] set];
+    [color set];
     [path fill];
 }
 
