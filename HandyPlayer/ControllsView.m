@@ -118,6 +118,10 @@
 
 -(NSEvent*)processMouseDownEvent:(NSEvent*)evt
 {
+    NSPoint p = [self convertPoint: evt.locationInWindow fromView:nil];
+    if( NSPointInRect(p, self.bounds))
+        return evt;
+
     static CFTimeInterval firstClick = 0;
     float delta = CACurrentMediaTime() - firstClick;
     
