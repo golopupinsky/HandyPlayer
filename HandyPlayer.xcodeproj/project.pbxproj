@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58733F2C1A0E9748005CAAB0 /* VolumeIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58733F2B1A0E9748005CAAB0 /* VolumeIndicatorView.m */; };
 		58C1B1841A0E1CAA00A6E3EC /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C1B1831A0E1CAA00A6E3EC /* pause.png */; };
+		58E863D81A1371BF00162506 /* MediaContextMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E863D71A1371BF00162506 /* MediaContextMenu.m */; };
 		58F183561A0A708D00A7E9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F183551A0A708D00A7E9D2 /* AppDelegate.m */; };
 		58F183581A0A708D00A7E9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F183571A0A708D00A7E9D2 /* main.m */; };
 		58F1835B1A0A708D00A7E9D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1835A1A0A708D00A7E9D2 /* ViewController.m */; };
@@ -52,6 +53,8 @@
 		58C1B1751A0BCAB100A6E3EC /* ControllsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllsDelegate.h; sourceTree = "<group>"; };
 		58C1B1761A0BDB4D00A6E3EC /* DragDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropDelegate.h; sourceTree = "<group>"; };
 		58C1B1831A0E1CAA00A6E3EC /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		58E863D61A1371BF00162506 /* MediaContextMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaContextMenu.h; sourceTree = "<group>"; };
+		58E863D71A1371BF00162506 /* MediaContextMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaContextMenu.m; sourceTree = "<group>"; };
 		58F1834F1A0A708D00A7E9D2 /* HandyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F183531A0A708D00A7E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F183541A0A708D00A7E9D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				58F1838B1A0B865D00A7E9D2 /* ControllsView.m */,
 				58733F2A1A0E9748005CAAB0 /* VolumeIndicatorView.h */,
 				58733F2B1A0E9748005CAAB0 /* VolumeIndicatorView.m */,
+				58E863D61A1371BF00162506 /* MediaContextMenu.h */,
+				58E863D71A1371BF00162506 /* MediaContextMenu.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				58F183871A0B815400A7E9D2 /* MediaProgressView.m in Sources */,
 				58F183801A0A8C6C00A7E9D2 /* DragDropView.m in Sources */,
 				58F1838C1A0B865D00A7E9D2 /* ControllsView.m in Sources */,
+				58E863D81A1371BF00162506 /* MediaContextMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

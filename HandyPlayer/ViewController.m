@@ -11,6 +11,7 @@
 #import "MediaProgressView.h"
 #import "ControllsView.h"
 #import "DragDropView.h"
+#import "MediaContextMenu.h"
 
 @implementation ViewController
 {
@@ -19,6 +20,7 @@
     __weak IBOutlet MediaProgressView *mediaProgressView;
     __weak IBOutlet ControllsView *controllsView;
     __weak IBOutlet NSButton *playButton;
+    IBOutlet MediaContextMenu *contextMenu;
     BOOL isSeekeng;
     NSPoint dragDelta;
     
@@ -35,7 +37,7 @@
     videoView = [[VLCVideoView alloc] initWithFrame:[self.view frame]];
     [self.view addSubview:videoView positioned:NSWindowBelow relativeTo:mediaProgressView];
     [videoView setAutoresizingMask: NSViewHeightSizable|NSViewWidthSizable];
-    videoView.fillScreen = YES;
+//    videoView.fillScreen = YES;
 
     [VLCLibrary sharedLibrary];
     
@@ -52,14 +54,15 @@
 
 -(void)fileDropped:(NSString*)name
 {
-//    mediaProgressView.enabled = true;
-    
     VLCMedia * media = [VLCMedia mediaWithPath:name];
     [player setMedia:media];
     
+    [self.view.window setTitle: [name lastPathComponent]];
     
-    [player play];
+    [self play:nil];
+    [self.view setMenu:contextMenu];
 }
+
 
 - (IBAction)play:(id)sender {
     
@@ -73,7 +76,6 @@
         [player play];
         [playButton setImage: [NSImage imageNamed:@"pause"]];
     }
-
 }
 
 -(void)pause
@@ -126,10 +128,6 @@
 
 - (void)mediaPlayerStateChanged:(NSNotification *)aNotification
 {
-    //controlls view for some reason goes to background after playback starts
-    //so we're moving it to front
-    [self bringControllsToFront];
-
     if(player.hasVideoOut)
     {
         CGSize s = player.videoSize;
@@ -173,6 +171,16 @@
     if(!isSeekeng && timeLeft != 0)
     {
         mediaProgressView.floatValue = curTime / timeLeft;
+    }
+    
+    if(![contextMenu isInitializedForFile:player.media.url.absoluteString])
+    {
+        //setting up context menu
+        [contextMenu setupWithPlayer:player];
+        
+        //controlls view for some reason goes to background after playback starts
+        //so we're moving it to front
+        [self bringControllsToFront];
     }
 }
 
