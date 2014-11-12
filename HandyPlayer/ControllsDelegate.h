@@ -21,6 +21,7 @@
 -(void)setVolume:(float)toVal;
 -(void)dragStarted;
 -(void)drag;
+-(void)dragEnded;
 @end
 
 #endif

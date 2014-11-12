@@ -80,6 +80,12 @@
          }];
     [eventMonitors addObject:e];
     
+    e = [NSEvent addLocalMonitorForEventsMatchingMask:NSLeftMouseUpMask handler:
+         ^NSEvent *(NSEvent *evt) {
+             return [self processMouseUpEvent:evt];
+         }];
+    [eventMonitors addObject:e];
+
     e = [NSEvent addLocalMonitorForEventsMatchingMask:NSLeftMouseDraggedMask handler:
          ^NSEvent *(NSEvent *evt) {
              return [self processMouseDragEvent:evt];
@@ -126,6 +132,11 @@
     
     firstClick = CACurrentMediaTime();
     
+    return evt;
+}
+-(NSEvent*)processMouseUpEvent:(NSEvent*)evt
+{
+    [self.delegate dragEnded];
     return evt;
 }
 

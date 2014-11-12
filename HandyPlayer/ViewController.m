@@ -17,12 +17,16 @@
 {
     VLCVideoView * videoView;
     VLCMediaPlayer *player;
+
     __weak IBOutlet MediaProgressView *mediaProgressView;
     __weak IBOutlet ControllsView *controllsView;
     __weak IBOutlet NSButton *playButton;
     IBOutlet MediaContextMenu *contextMenu;
+    
     BOOL isSeekeng;
+    BOOL isDragging;
     NSPoint dragDelta;
+    
     
 }
 - (void)viewDidLoad {
@@ -101,6 +105,8 @@
 
 -(void)dragStarted
 {
+    isDragging = true;
+
     NSPoint mouse = [NSEvent mouseLocation];
     NSPoint window = self.view.window.frame.origin;
     dragDelta = NSMakePoint(window.x - mouse.x, window.y - mouse.y);
@@ -108,8 +114,16 @@
 
 -(void)drag
 {
-    NSPoint p = [NSEvent mouseLocation];
-    [self.view.window setFrameOrigin: NSMakePoint(p.x + dragDelta.x, p.y + dragDelta.y)];
+    if(isDragging)
+    {
+        NSPoint p = [NSEvent mouseLocation];
+        [self.view.window setFrameOrigin: NSMakePoint(p.x + dragDelta.x, p.y + dragDelta.y)];
+    }
+}
+
+-(void)dragEnded
+{
+    isDragging = false;
 }
 
 - (void)seek:(float)val {
