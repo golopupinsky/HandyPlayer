@@ -39,18 +39,6 @@
 
 -(void)setup
 {
-//    knobImage = [NSImage imageNamed:@"hud_slider-knobBlack-N"];
-//    [self addHandle:@"High"
-//            image:img
-//        initRatio:0.0
-//       valueBlock:^float(float inVal) {
-//           return inVal;
-//       }
-//    invValueBlock:^float(float inVal) {
-//        return inVal;
-//    }
-//     ];
-    
     NSImage *sliderBarImage = [self sliderBarImage];
     float startX = (self.frame.size.width - sliderBarImage.size.width) * 0.5;
     float startY = (self.frame.size.height - sliderBarImage.size.height) * 0.5;
@@ -64,8 +52,6 @@
     knob = [[NSImageView alloc] initWithFrame:NSMakeRect(0, startY, knobImage.size.width, knobImage.size.height)];
     knob.image = knobImage;
     [self addSubview:knob];
-
-
 }
 
 - (NSImage *)sliderBarImage
