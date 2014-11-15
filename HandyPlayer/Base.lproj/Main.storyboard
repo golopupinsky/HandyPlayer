@@ -684,8 +684,8 @@
                                         </connections>
                                     </customView>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olA-W2-8Ze">
-                                        <rect key="frame" x="70" y="28" width="22" height="25"/>
-                                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="pause" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6pc-tB-BRq">
+                                        <rect key="frame" x="70" y="30" width="22" height="22"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="pause" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="6pc-tB-BRq">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
