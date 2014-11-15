@@ -722,6 +722,7 @@
                         <outlet property="controllsView" destination="ZWs-iP-ESv" id="lbM-Yw-a5C"/>
                         <outlet property="mediaProgressView" destination="oCg-Y0-fbB" id="GX2-N7-tmH"/>
                         <outlet property="playButton" destination="olA-W2-8Ze" id="lmf-z9-Mho"/>
+                        <outlet property="volumeIndicatorView" destination="RtC-W3-TgS" id="o4o-lu-3qt"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -70,7 +70,6 @@
 		58F183771A0A88A400A7E9D2 /* VLCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VLCKit.framework; path = Frameworks/VLCKit.framework; sourceTree = SOURCE_ROOT; };
 		58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropView.h; sourceTree = "<group>"; };
 		58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropView.m; sourceTree = "<group>"; };
-		58F183811A0A94E800A7E9D2 /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		58F183831A0AAE8000A7E9D2 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		58F183851A0B815400A7E9D2 /* MediaProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaProgressView.h; sourceTree = "<group>"; };
 		58F183861A0B815400A7E9D2 /* MediaProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaProgressView.m; sourceTree = "<group>"; };
@@ -206,7 +205,6 @@
 		58F183891A0B816C00A7E9D2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				58F183811A0A94E800A7E9D2 /* Notifications.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";

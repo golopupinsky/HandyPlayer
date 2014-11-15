@@ -13,4 +13,5 @@
 
 @property (nonatomic,weak) IBOutlet id<ControllsDelegate> delegate;
 
+-(void)volumeChanged:(float)vol;
 @end

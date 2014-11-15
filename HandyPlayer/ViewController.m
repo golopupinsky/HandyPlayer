@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "Notifications.h"
 #import "MediaProgressView.h"
 #import "ControllsView.h"
 #import "DragDropView.h"
 #import "MediaContextMenu.h"
+#import "VolumeIndicatorView.h"
 
 @implementation ViewController
 {
@@ -21,6 +21,7 @@
     __weak IBOutlet MediaProgressView *mediaProgressView;
     __weak IBOutlet ControllsView *controllsView;
     __weak IBOutlet NSButton *playButton;
+    __weak IBOutlet VolumeIndicatorView *volumeIndicatorView;
     IBOutlet MediaContextMenu *contextMenu;
     
     BOOL isSeekeng;
@@ -100,7 +101,7 @@
 -(void)setVolume:(float)toVal
 {
     player.audio.volume = toVal * 100;
-    [[NSNotificationCenter defaultCenter] postNotificationName:kVolumeChangedNotification object:nil userInfo:@{@"volume":[NSNumber numberWithFloat: (float)player.audio.volume / 100 ]}];
+    [volumeIndicatorView volumeChanged:toVal];
 }
 
 -(void)dragStarted

@@ -7,35 +7,33 @@
 //
 
 #import "VolumeIndicatorView.h"
-#import "Notifications.h"
 
 @implementation VolumeIndicatorView
 {
     float volume;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
--(void)setup
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChanged:) name:kVolumeChangedNotification object:nil];
-}
+//- (instancetype)initWithCoder:(NSCoder *)coder
+//{
+//    self = [super initWithCoder:coder];
+//    if (self) {
+//        [self setup];
+//    }
+//    return self;
+//}
+//
+//- (instancetype)initWithFrame:(NSRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        [self setup];
+//    }
+//    return self;
+//}
+//
+//-(void)setup
+//{
+//}
 
 - (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
@@ -95,9 +93,9 @@
     [self.delegate setVolume:val];
 }
 
--(void)volumeChanged:(NSNotification*)notification
+-(void)volumeChanged:(float)vol
 {
-    volume = [(NSNumber*) notification.userInfo[@"volume"] floatValue ];
+    volume = vol;
     [self setNeedsDisplay:true];
 }
 
