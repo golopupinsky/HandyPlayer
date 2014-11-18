@@ -16,6 +16,7 @@
     __weak IBOutlet NSMenuItem *audioSubmenu;
     __weak IBOutlet NSMenuItem *subtitlesSubmenu;
     NSString *lastFileName;
+    VLCMediaPlayer *mediaPlayer;
 }
 
 -(bool)isInitializedForFile:(NSString*)fname;
@@ -25,11 +26,92 @@
 
 -(void)setupWithPlayer:(VLCMediaPlayer*)player
 {
-    [videoSubmenu setEnabled:player.hasVideoOut];
-    [audioSubmenu setEnabled:[player.audioTrackNames count] != 0];
-    [subtitlesSubmenu setEnabled:player.hasVideoOut];
+    mediaPlayer = player;
+    //TODO: clean all menus
+    [self setupVideoSubmenu];
+    [self setupAudioSubmenu];
+    [self setupSubsSubmenu];
 
     lastFileName = player.media.url.absoluteString;
+}
+
+-(void)setupVideoSubmenu
+{
+    [videoSubmenu setEnabled:mediaPlayer.hasVideoOut];
+    if(videoSubmenu.enabled)
+    {
+        for (NSString *s in mediaPlayer.videoTrackNames) {
+            NSUInteger idx = [mediaPlayer.videoTrackNames indexOfObject:s];
+
+            NSMenuItem * item = [[NSMenuItem alloc]initWithTitle:s action:@selector(pickVideoTrack:) keyEquivalent:@""];
+            item.state = mediaPlayer.currentVideoTrackIndex == [(NSNumber*) mediaPlayer.videoTrackIndexes[idx] integerValue];
+            [item setTarget:self];
+            
+            [videoSubmenu.submenu addItem:item];
+        }
+    }
+}
+
+-(void)setupAudioSubmenu
+{
+    [audioSubmenu setEnabled:[mediaPlayer.audioTrackNames count] != 0];
+    if(audioSubmenu.enabled)
+    {
+        for (NSString *s in mediaPlayer.audioTrackNames) {
+            NSUInteger idx = [mediaPlayer.audioTrackNames indexOfObject:s];
+            
+            NSMenuItem * item = [[NSMenuItem alloc]initWithTitle:s action:@selector(pickAudioTrack:) keyEquivalent:@""];
+            item.state = mediaPlayer.currentAudioTrackIndex == [(NSNumber*) mediaPlayer.audioTrackIndexes[idx] integerValue];
+            [item setTarget:self];
+            
+            [audioSubmenu.submenu addItem:item];
+        }
+    }
+}
+
+-(void)setupSubsSubmenu
+{
+    [subtitlesSubmenu setEnabled:mediaPlayer.hasVideoOut];
+    if(subtitlesSubmenu.enabled)
+    {
+        //TODO:code here
+    }
+}
+
+-(void)pickVideoTrack:(NSMenuItem*)sender
+{
+    //TODO: this function sometimes hides controlls. move them to top after call
+    NSUInteger idx = [mediaPlayer.videoTrackNames indexOfObject:sender.title];
+    NSUInteger properIdx = [(NSNumber*) mediaPlayer.videoTrackIndexes[idx] integerValue];
+    mediaPlayer.currentVideoTrackIndex = properIdx;
+    
+    [self unsetStateForChildren:sender.parentItem];
+    sender.state = 1;
+}
+
+-(void)pickAudioTrack:(NSMenuItem*)sender
+{
+    NSUInteger idx = [mediaPlayer.audioTrackNames indexOfObject:sender.title];
+    NSUInteger properIdx = [(NSNumber*) mediaPlayer.audioTrackIndexes[idx] integerValue];
+    mediaPlayer.currentAudioTrackIndex = properIdx;
+
+    [self unsetStateForChildren:sender.parentItem];
+    sender.state = 1;
+}
+
+-(void)pickSubsTrack:(NSMenuItem*)sender
+{
+    //TODO:code here
+    [self unsetStateForChildren:sender.parentItem];
+    sender.state = 1;
+}
+
+-(void)unsetStateForChildren:(NSMenuItem*)parent
+{
+    for(NSMenuItem *i in parent.submenu.itemArray)
+    {
+        i.state=0;
+    }
 }
 
 @end
