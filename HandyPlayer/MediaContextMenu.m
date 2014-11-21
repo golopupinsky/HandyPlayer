@@ -37,6 +37,8 @@
 
 -(void)setupVideoSubmenu
 {
+    [videoSubmenu.submenu removeAllItems];
+    
     [videoSubmenu setEnabled:mediaPlayer.hasVideoOut];
     if(videoSubmenu.enabled)
     {
@@ -54,6 +56,8 @@
 
 -(void)setupAudioSubmenu
 {
+    [audioSubmenu.submenu removeAllItems];
+
     [audioSubmenu setEnabled:[mediaPlayer.audioTrackNames count] != 0];
     if(audioSubmenu.enabled)
     {
@@ -71,10 +75,20 @@
 
 -(void)setupSubsSubmenu
 {
-    [subtitlesSubmenu setEnabled:mediaPlayer.hasVideoOut];
+    [subtitlesSubmenu.submenu removeAllItems];
+
+    [subtitlesSubmenu setEnabled:mediaPlayer.hasVideoOut && [mediaPlayer.videoSubTitlesNames count] > 0];
     if(subtitlesSubmenu.enabled)
     {
-        //TODO:code here
+        for (NSString *s in mediaPlayer.videoSubTitlesNames) {
+            NSUInteger idx = [mediaPlayer.videoSubTitlesNames indexOfObject:s];
+            
+            NSMenuItem * item = [[NSMenuItem alloc]initWithTitle:s action:@selector(pickSubsTrack:) keyEquivalent:@""];
+            item.state = mediaPlayer.currentVideoSubTitleIndex == [(NSNumber*) mediaPlayer.videoSubTitlesIndexes[idx] integerValue];
+            [item setTarget:self];
+            
+            [subtitlesSubmenu.submenu addItem:item];
+        }
     }
 }
 
@@ -101,7 +115,10 @@
 
 -(void)pickSubsTrack:(NSMenuItem*)sender
 {
-    //TODO:code here
+    NSUInteger idx = [mediaPlayer.videoSubTitlesNames indexOfObject:sender.title];
+    NSUInteger properIdx = [(NSNumber*) mediaPlayer.videoSubTitlesIndexes[idx] integerValue];
+    mediaPlayer.currentVideoSubTitleIndex = properIdx;
+
     [self unsetStateForChildren:sender.parentItem];
     sender.state = 1;
 }
