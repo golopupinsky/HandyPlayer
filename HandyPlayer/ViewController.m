@@ -143,11 +143,7 @@
 
 - (void)mediaPlayerStateChanged:(NSNotification *)aNotification
 {
-    if(player.hasVideoOut)
-    {
-        CGSize s = player.videoSize;
-        [self.view.window.animator setContentSize:s];
-    }
+    
 }
 
 -(void)bringControllsToFront
@@ -189,13 +185,24 @@
     }
     
     if(![contextMenu isInitializedForFile:player.media.url.absoluteString])
-    {
+    {//all code under here should be in mediaPlayerStateChanged: but it does not work consistently there
+        
         //setting up context menu
         [contextMenu setupWithPlayer:player];
         
         //controlls view for some reason goes to background after playback starts
         //so we're moving it to front
         [self bringControllsToFront];
+        
+        if(player.hasVideoOut && (([self.view.window styleMask] & NSFullScreenWindowMask) != NSFullScreenWindowMask) )
+        {//resize window to fit content
+            CGSize s = player.videoSize;
+            CGRect r = self.view.window.frame;
+            r.size = s;
+            r.size.height += NSHeight(self.view.window.frame) - NSHeight(self.view.frame);//adding window title bar height
+            [self.view.window.animator setFrame:r display:true];
+
+        }
     }
 }
 
