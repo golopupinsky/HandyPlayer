@@ -96,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5866D9AD1A1FA4A20056676C /* Controlls */ = {
+			isa = PBXGroup;
+			children = (
+				58733F2A1A0E9748005CAAB0 /* VolumeIndicatorView.h */,
+				58733F2B1A0E9748005CAAB0 /* VolumeIndicatorView.m */,
+				58F183851A0B815400A7E9D2 /* MediaProgressView.h */,
+				58F183861A0B815400A7E9D2 /* MediaProgressView.m */,
+			);
+			name = Controlls;
+			sourceTree = "<group>";
+		};
 		58C1B1731A0BCA4200A6E3EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,14 +199,11 @@
 		58F183881A0B815800A7E9D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5866D9AD1A1FA4A20056676C /* Controlls */,
 				58F1837E1A0A8C6C00A7E9D2 /* DragDropView.h */,
 				58F1837F1A0A8C6C00A7E9D2 /* DragDropView.m */,
-				58F183851A0B815400A7E9D2 /* MediaProgressView.h */,
-				58F183861A0B815400A7E9D2 /* MediaProgressView.m */,
 				58F1838A1A0B865D00A7E9D2 /* ControllsView.h */,
 				58F1838B1A0B865D00A7E9D2 /* ControllsView.m */,
-				58733F2A1A0E9748005CAAB0 /* VolumeIndicatorView.h */,
-				58733F2B1A0E9748005CAAB0 /* VolumeIndicatorView.m */,
 				58E863D61A1371BF00162506 /* MediaContextMenu.h */,
 				58E863D71A1371BF00162506 /* MediaContextMenu.m */,
 			);

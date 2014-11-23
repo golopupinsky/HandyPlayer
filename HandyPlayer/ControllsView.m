@@ -122,19 +122,14 @@
     if( NSPointInRect(p, self.bounds))
         return evt;
 
-    static CFTimeInterval firstClick = 0;
-    float delta = CACurrentMediaTime() - firstClick;
-    
-    if(delta < 0.25)
-    {//considered as doubleclick
+    if(evt.clickCount == 2)
+    {
         [self.delegate fullscreen];
     }
     else
     {
         [self.delegate dragStarted];
     }
-    
-    firstClick = CACurrentMediaTime();
     
     return evt;
 }

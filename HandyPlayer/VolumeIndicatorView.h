@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ControllsDelegate.h"
 
-@interface VolumeIndicatorView : NSView
+@interface VolumeIndicatorView : NSControl
 
 @property (nonatomic,weak) IBOutlet id<ControllsDelegate> delegate;
 

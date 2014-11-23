@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ControllsDelegate.h"
 
-@interface MediaProgressView : NSView
+@interface MediaProgressView : NSControl
 
 @property(nonatomic,weak) IBOutlet id<ControllsDelegate> delegate;
 
