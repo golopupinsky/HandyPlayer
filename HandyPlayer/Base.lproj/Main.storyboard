@@ -693,12 +693,26 @@
                                             <action selector="play:" target="XfG-lQ-9wD" id="Xl8-Rj-ZX5"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIs-Z8-7In">
+                                        <rect key="frame" x="12" y="30" width="22" height="25"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="folder" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f31-L8-GOr">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtC-W3-TgS" customClass="VolumeIndicatorView">
                                         <rect key="frame" x="109" y="30" width="42" height="22"/>
                                         <connections>
                                             <outlet property="delegate" destination="XfG-lQ-9wD" id="gAf-Jl-DDJ"/>
                                         </connections>
                                     </customView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEb-RN-zn4">
+                                        <rect key="frame" x="40" y="30" width="22" height="25"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="picture" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="AwV-G9-DBN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="PO2-nP-h18"/>
@@ -752,6 +766,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="folder" width="128" height="128"/>
         <image name="pause" width="128" height="128"/>
+        <image name="picture" width="128" height="128"/>
     </resources>
 </document>
