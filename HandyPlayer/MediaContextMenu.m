@@ -27,7 +27,6 @@
 -(void)setupWithPlayer:(VLCMediaPlayer*)player
 {
     mediaPlayer = player;
-    //TODO: clean all menus
     [self setupVideoSubmenu];
     [self setupAudioSubmenu];
     [self setupSubsSubmenu];
@@ -52,6 +51,8 @@
             [videoSubmenu.submenu addItem:item];
         }
     }
+    //TODO: take a screenshot with saveVideoSnapshotAt
+
 }
 
 -(void)setupAudioSubmenu
@@ -90,6 +91,7 @@
             [subtitlesSubmenu.submenu addItem:item];
         }
     }
+    //TODO: external subtitles sources with openVideoSubTitlesFromFile
 }
 
 -(void)pickVideoTrack:(NSMenuItem*)sender
