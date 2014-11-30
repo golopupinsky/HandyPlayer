@@ -55,7 +55,6 @@
 		5873ABA01A2A666E00D6755C /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
 		5873ABA11A2A666E00D6755C /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		58C1B1751A0BCAB100A6E3EC /* ControllsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllsDelegate.h; sourceTree = "<group>"; };
-		58C1B1761A0BDB4D00A6E3EC /* DragDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropDelegate.h; sourceTree = "<group>"; };
 		58C1B1831A0E1CAA00A6E3EC /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		58E863D61A1371BF00162506 /* MediaContextMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaContextMenu.h; sourceTree = "<group>"; };
 		58E863D71A1371BF00162506 /* MediaContextMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaContextMenu.m; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				58C1B1751A0BCAB100A6E3EC /* ControllsDelegate.h */,
-				58C1B1761A0BDB4D00A6E3EC /* DragDropDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

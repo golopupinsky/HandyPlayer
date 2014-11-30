@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DragDropDelegate.h"
+#import "DragDropView.h"
 
 @interface AppDelegate ()
 

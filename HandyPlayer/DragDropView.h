@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import <VLCKit/VLCKit.h>
-#import "DragDropDelegate.h"
+
+@protocol DragDropDelegate <NSObject>
+@required
+-(void)fileDropped:(NSString*)path;
+@end
 
 @interface DragDropView : NSView
-
 
 @property(nonatomic,weak) IBOutlet id<DragDropDelegate> delegate;
 
