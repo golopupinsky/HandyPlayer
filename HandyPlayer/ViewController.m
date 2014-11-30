@@ -203,12 +203,19 @@
 
 -(void)scaleWindowToFitContent
 {
-    CGSize s = player.videoSize;
     CGRect r = self.view.window.frame;
-    r.size = s;
+    r.size = player.videoSize;
     r.size.height += NSHeight(self.view.window.frame) - NSHeight(self.view.frame);//adding window title bar height
+    
+    CGRect screenFrame = [NSScreen mainScreen].frame;
+    if(CGRectGetWidth(r) > CGRectGetWidth(screenFrame) || CGRectGetHeight(r) > CGRectGetHeight(screenFrame))
+    {//window frame will be bigger than screen. Can't allow that
+        float ratio = CGRectGetHeight(r) / CGRectGetWidth(r);
+        r.size.width = CGRectGetWidth(screenFrame);
+        r.size.height = CGRectGetWidth(r) * ratio;
+    }
+
     [self.view.window.animator setFrame:r display:true];
-    //TODO: detect max screen resolution and do not scale above it
 }
 
 @end
