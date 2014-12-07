@@ -37,22 +37,28 @@
 -(void)setupVideoSubmenu
 {
     [videoSubmenu.submenu removeAllItems];
-    
     [videoSubmenu setEnabled:mediaPlayer.hasVideoOut];
+    
+    //setup screenshot item + separator
+    NSMenuItem *screenshotItem = [[NSMenuItem alloc]initWithTitle:@"Save screenshot to Desktop" action:@selector(takeScreenshot) keyEquivalent:@""];
+    [screenshotItem setTarget:self];
+    [videoSubmenu.submenu addItem:screenshotItem];
+    NSMenuItem *separatorItem = [NSMenuItem separatorItem];
+    [videoSubmenu.submenu addItem:separatorItem];
+
+    //setup video tracks
     if(videoSubmenu.enabled)
     {
         for (NSString *s in mediaPlayer.videoTrackNames) {
             NSUInteger idx = [mediaPlayer.videoTrackNames indexOfObject:s];
 
-            NSMenuItem * item = [[NSMenuItem alloc]initWithTitle:s action:@selector(pickVideoTrack:) keyEquivalent:@""];
+            NSMenuItem *item = [[NSMenuItem alloc]initWithTitle:s action:@selector(pickVideoTrack:) keyEquivalent:@""];
             item.state = mediaPlayer.currentVideoTrackIndex == [(NSNumber*) mediaPlayer.videoTrackIndexes[idx] integerValue];
             [item setTarget:self];
             
             [videoSubmenu.submenu addItem:item];
         }
     }
-    //TODO: take a screenshot with saveVideoSnapshotAt
-
 }
 
 -(void)setupAudioSubmenu
@@ -92,6 +98,12 @@
         }
     }
     //TODO: external subtitles sources with openVideoSubTitlesFromFile
+}
+
+-(void)takeScreenshot
+{
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+    [mediaPlayer saveVideoSnapshotAt:path withWidth:0 andHeight:0];
 }
 
 -(void)pickVideoTrack:(NSMenuItem*)sender
