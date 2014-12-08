@@ -162,16 +162,14 @@
     NSArray *cc = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(==163)]"
                                             options: 0
                                             metrics:nil
-                                              views:@{@"view" : controllsView}];
+                                            views:@{@"view" : controllsView}];
     [self.view addConstraints:cc];
 
     cc = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(==66)]-6-|"
                                             options: 0
                                             metrics:nil
-                                              views:@{@"view" : controllsView}];
+                                            views:@{@"view" : controllsView}];
     [self.view addConstraints:cc];
-
-
 }
 
 - (void)mediaPlayerTimeChanged:(NSNotification *)aNotification

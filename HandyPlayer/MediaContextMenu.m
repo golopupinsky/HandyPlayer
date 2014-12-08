@@ -97,7 +97,10 @@
             [subtitlesSubmenu.submenu addItem:item];
         }
     }
-    //TODO: external subtitles sources with openVideoSubTitlesFromFile
+    //external subtitles sources
+    NSMenuItem *externalSubtitlesItem = [[NSMenuItem alloc]initWithTitle:@"From file..." action:@selector(pickSubtitlesFile) keyEquivalent:@""];
+    [externalSubtitlesItem setTarget:self];
+    [subtitlesSubmenu.submenu addItem:externalSubtitlesItem];
 }
 
 -(void)takeScreenshot
@@ -105,6 +108,33 @@
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
     [mediaPlayer saveVideoSnapshotAt:path withWidth:0 andHeight:0];
 }
+
+-(void)pickSubtitlesFile
+{
+    NSString *path = [self chooseFile];
+    if (path != nil)
+    {
+        [mediaPlayer openVideoSubTitlesFromFile:path];
+    }
+}
+
+-(NSString*)chooseFile
+{
+    NSPanel *panel;
+    NSInteger clicked;
+    panel = [NSOpenPanel openPanel];
+    [(NSOpenPanel*)panel setCanChooseFiles:YES];
+    [(NSOpenPanel*)panel setCanChooseDirectories:NO];
+    clicked = [(NSOpenPanel*)panel runModal];
+    if (clicked == NSFileHandlingPanelOKButton) {
+        for (NSURL *url in [(NSOpenPanel*)panel URLs]) {
+            return  [url path];
+        }
+    }
+    
+    return nil;
+}
+
 
 -(void)pickVideoTrack:(NSMenuItem*)sender
 {
