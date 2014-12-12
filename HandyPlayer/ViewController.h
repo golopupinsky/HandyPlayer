@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <VLCKit/VLCKit.h>
-#import "ControllsDelegate.h"
+#import "ControllsView.h"
 #import "DragDropView.h"
 
 @interface ViewController : NSViewController <VLCMediaPlayerDelegate,ControllsDelegate,DragDropDelegate>

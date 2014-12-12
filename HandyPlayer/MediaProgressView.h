@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ControllsDelegate.h"
+#import "ControllsView.h"
 
 @interface MediaProgressView : NSControl
 
